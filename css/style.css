@@ -879,3 +879,40 @@ section{padding:56px 24px}
 /* ===== Texto gris más legible ===== */
 :root{--ink:#37444f;--mute:#55636f}
 .sub{font-size:18px;line-height:1.65}
+
+/* ===== Paleta: Soft Navy, Verde Oliva y Alabastro ===== */
+:root{
+  --paper:#f7f4ec;
+  --navy:#384d62;
+  --olive:#7a8f63;
+  --olive-d:#5f7349;
+  --ink:#2f3d49;
+  --mute:#55636f;
+}
+
+/* Fondo marfil con textura mucho más suave */
+body{
+  background-color:var(--paper);
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' seed='9'/><feColorMatrix values='0 0 0 0 .45 0 0 0 0 .42 0 0 0 0 .34 0 0 0 .06 0'/></filter><rect width='240' height='240' filter='url(%23g)'/></svg>"),
+    radial-gradient(ellipse at 50% -8%,rgba(255,255,255,.7),rgba(255,255,255,0) 62%);
+  background-repeat:repeat,no-repeat;
+}
+@media (min-width:900px){
+  body{background-color:#e9e6dc}
+  main{background-color:var(--paper);background-image:inherit;background-repeat:inherit}
+}
+
+/* Títulos en azul navy (más contraste) */
+h2,.ht .names{background:linear-gradient(100deg,#5f7f9e,#384d62 55%,#6c8cab);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ht .amp{color:#7a8f63}
+
+/* Tarjetas en alabastro */
+.card{background:rgba(255,255,252,.82)}
+.cb{background:rgba(255,255,252,.78)}
+.print{background:#fffffc}
+
+/* Verde oliva como acento */
+.wc.g{background:linear-gradient(rgba(122,143,99,.08),rgba(122,143,99,.08))}
+.btn{background:linear-gradient(135deg,#4f6a85,#384d62)}
+.btn.alt{color:#384d62;border-color:#7a8f63}
