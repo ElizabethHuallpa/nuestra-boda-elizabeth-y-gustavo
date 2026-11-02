@@ -125,10 +125,7 @@ const getComps=()=>[...compBox.querySelectorAll('input')].map(i=>i.value.trim().
  /*fin*/
 
 let guest=null,authorized=Math.min(CFG.unlistedPasses||1,CFG.seatsCap||10),sending=false;
-
-  const plural=(n,s,p)=>n+' '+(n===1?s:p);  
  /*fin*/
-
 
   const plural=(n,s,p)=>n+' '+(n===1?s:p);
   const val=n=>String((n&&n.value)||'').trim();
