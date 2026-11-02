@@ -1,5 +1,7 @@
 const TARGET=new Date('2026-12-05T10:30:00-05:00'); // 10:30 hora de Lima: mismo instante para todos los países
 const $=i=>document.getElementById(i),au=$('bg'),mc=$('mc');let opened=false;
+const ICON_ON='<svg class="ic ic-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 6v12l-4.5-3.5H4z"/><path d="M15.5 9a4.5 4.5 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg>';
+const ICON_OFF='<svg class="ic ic-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 6v12l-4.5-3.5H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>';
 function tick(){const t=Math.max(0,TARGET-Date.now()),p=n=>String(n).padStart(2,'0');
  $('d').textContent=p(Math.floor(t/864e5));$('h').textContent=p(Math.floor(t%864e5/36e5));$('m').textContent=p(Math.floor(t%36e5/6e4));$('s').textContent=p(Math.floor(t%6e4/1e3))}
 tick();setInterval(tick,1000);
@@ -18,9 +20,7 @@ function openInv(){
  },3900);
 }
 au.addEventListener('error',()=>{mc.style.display='none'});
-au.addEventListener('playing',()=>{mc.style.display='grid';mc.textContent='🔊'});
-const ICON_ON='<svg class="ic ic-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 6v12l-4.5-3.5H4z"/><path d="M15.5 9a4.5 4.5 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg>';
-const ICON_OFF='<svg class="ic ic-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 6v12l-4.5-3.5H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>';
+au.addEventListener('playing',()=>{mc.style.display='grid';mc.innerHTML=ICON_ON});
 function toggleMusic(){
   if(au.paused){
     au.play().catch(()=>{});
