@@ -19,4 +19,16 @@ function openInv(){
 }
 au.addEventListener('error',()=>{mc.style.display='none'});
 au.addEventListener('playing',()=>{mc.style.display='grid';mc.textContent='🔊'});
-function toggleMusic(){if(au.paused){au.play().catch(()=>{});mc.textContent='🔊'}else{au.pause();mc.textContent='🔇'}}
+const ICON_ON='<svg class="ic ic-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 6v12l-4.5-3.5H4z"/><path d="M15.5 9a4.5 4.5 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg>';
+const ICON_OFF='<svg class="ic ic-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 6v12l-4.5-3.5H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>';
+function toggleMusic(){
+  if(au.paused){
+    au.play().catch(()=>{});
+    mc.innerHTML=ICON_ON;
+    mc.setAttribute('aria-label','Silenciar música');
+  }else{
+    au.pause();
+    mc.innerHTML=ICON_OFF;
+    mc.setAttribute('aria-label','Activar música');
+  }
+}
