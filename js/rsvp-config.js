@@ -1,5 +1,6 @@
 const RSVP_CONFIG = {
   guests: [
+    { n: "Prueba 0, p: 3 },
     { n: "Gustavo Antonio", p: 3 },
     { n: "Orfelinda Avalo", p: 1 },
     { n: "Carla Arellano", p: 2 },
@@ -18,6 +19,7 @@ const RSVP_CONFIG = {
     { n: "Luis Medina", p: 2 },
     { n: "Carolina Gamio", p: 2 },
     { n: "Ana Avalo", p: 2 },
+    { n: "Elvis Avalo", p: 2 },
     { n: "Jose Boschi", p: 2 },
     { n: "Ernest Arellano", p: 1 },
     { n: "Mercedes Arellano", p: 1 },
