@@ -66,9 +66,10 @@ const RSVP_CONFIG = {
  */
 function getAuthorizedPasses(name) {
   const guest = getGuestConfig(name);
-
   return guest ? guest.p : RSVP_CONFIG.unlistedPasses;
-}
+    unlistedPasses: 1,
+  seatsCap: 10
+};
 
 /**
  * Devuelve el máximo de acompañantes,
@@ -76,9 +77,10 @@ function getAuthorizedPasses(name) {
  */
 function getMaxCompanions(name) {
   const passes = getAuthorizedPasses(name);
-
   return Math.max(
     0,
     Math.min(passes - 1, RSVP_CONFIG.seatsCap - 1)
+      unlistedPasses: 1,
+  seatsCap: 10
   );
-}
+};
