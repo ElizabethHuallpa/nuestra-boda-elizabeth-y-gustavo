@@ -56,31 +56,24 @@ const RSVP_CONFIG = {
 
   // Invitaciones no registradas: un pase por defecto
   unlistedPasses: 1,
-  
   // Máximo general de personas, incluida la persona titular
   seatsCap: 10
 };
 
 /**ESTO SE ELIMINO: Busca una invitación por nombre completo. 
- * Devuelve el total de pases autorizados.
- */
+ * Devuelve el total de pases autorizados.*/
 function getAuthorizedPasses(name) {
   const guest = getGuestConfig(name);
   return guest ? guest.p : RSVP_CONFIG.unlistedPasses;
-    unlistedPasses: 1,
-  seatsCap: 10
 };
 
 /**
  * Devuelve el máximo de acompañantes,
- * sin contar a la persona titular.
- */
+ * sin contar a la persona titular.*/
 function getMaxCompanions(name) {
   const passes = getAuthorizedPasses(name);
   return Math.max(
     0,
     Math.min(passes - 1, RSVP_CONFIG.seatsCap - 1)
-      unlistedPasses: 1,
-  seatsCap: 10
   );
 };
