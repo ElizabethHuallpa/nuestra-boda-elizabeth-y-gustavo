@@ -864,3 +864,18 @@ section{padding:56px 24px}
 .local{margin-top:14px}
 .pal{margin:16px 0 4px}
 .field{height:190px;margin-top:22px}
+
+/* ===== Pétalos de hortensia: detrás del contenido y discretos ===== */
+.petal{z-index:0}
+.petal .pt{background:none;box-shadow:none;border-radius:0;opacity:.6;filter:drop-shadow(0 1px 1px rgba(60,90,135,.18))}
+.petal .pt svg{display:block}
+
+/* ===== Colores a evitar dentro de cada tarjeta ===== */
+.avoid-t{margin-top:18px;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--mute)}
+.card .pal{margin:10px 0 0;gap:12px}
+.card .pal i{position:relative;width:34px;height:34px;border:1px solid rgba(95,134,168,.4);box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.card .pal i::after{content:"";position:absolute;left:50%;top:-4px;bottom:-4px;width:1.5px;background:rgba(166,61,61,.85);transform:translateX(-50%) rotate(45deg)}
+
+/* ===== Texto gris más legible ===== */
+:root{--ink:#37444f;--mute:#55636f}
+.sub{font-size:18px;line-height:1.65}
