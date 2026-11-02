@@ -1,6 +1,6 @@
 const RSVP_CONFIG = {
   guests: [
-    { n: "Prueba 0, p: 3 },
+    { n: "Prueba cero, p: 3 },
     { n: "Gustavo Antonio", p: 3 },
     { n: "Orfelinda Avalo", p: 1 },
     { n: "Carla Arellano", p: 2 },
