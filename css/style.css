@@ -851,3 +851,16 @@ h2{
   letter-spacing:2px;
   color:var(--ink);
 }
+
+/* ===== Íconos de línea ===== */
+.ic{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ic-lg{width:22px;height:22px}
+#mc{color:#4f7399}
+
+/* ===== Ritmo vertical más compacto ===== */
+section{padding:56px 24px}
+@media (min-width:768px){section{padding:72px 48px}}
+
+.local{margin-top:14px}
+.pal{margin:16px 0 4px}
+.field{height:190px;margin-top:22px}
