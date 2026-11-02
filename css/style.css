@@ -794,3 +794,60 @@ h2{
   margin-left:auto;
   margin-right:auto;
 }
+
+/* ===== Números alineados (lining) en toda la página ===== */
+*,*::before,*::after{
+  font-variant-numeric:lining-nums !important;
+  font-feature-settings:"lnum" 1 !important;
+}
+/* Cuenta regresiva: dígitos de ancho fijo para que no "bailen" */
+.cv{font-variant-numeric:lining-nums tabular-nums !important}
+
+/* ===== Fecha de la boda: misma tipografía y paleta que el resto ===== */
+.fecha-boda{
+  max-width:340px;
+  margin:32px auto 16px;
+  color:var(--ink);
+  font-family:'Cormorant Garamond',serif;
+}
+.fecha-boda .mes{
+  text-align:center;
+  font-size:19px;
+  font-weight:500;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  color:var(--navy);
+  margin-bottom:12px;
+}
+.fecha-detalle{
+  display:grid;
+  grid-template-columns:1fr 64px 1fr;
+  align-items:center;
+  gap:14px;
+}
+.fecha-lateral{
+  border-top:1px solid rgba(95,134,168,.45);
+  border-bottom:1px solid rgba(95,134,168,.45);
+  min-height:40px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:19px;
+  letter-spacing:1px;
+  color:var(--ink);
+  white-space:nowrap;
+}
+.fecha-boda .dia{
+  font-size:54px;
+  line-height:1;
+  font-weight:500;
+  text-align:center;
+  color:var(--navy);
+}
+.fecha-boda .hora{
+  margin-top:24px;
+  text-align:center;
+  font-size:22px;
+  letter-spacing:2px;
+  color:var(--ink);
+}
