@@ -64,13 +64,13 @@
             hp:f('website'),btn,status:statusEl};
   const btnLabel=btn.textContent||'Enviar respuesta';
 
-     const compBox=g('companions');
+  /*const compBox=g('companions');
   function renderCompanions(){
-    if(!compBox)return;
-    const n=(isYes(att())&&hasSeats)?(parseInt(seatsEl.value,10)||1):1;
-    const need=Math.max(0,n-1);
-    const old=[...compBox.querySelectorAll('input')].map(i=>i.value);
-    compBox.innerHTML='';
+  if(!compBox)return;
+  const n=(isYes(att())&&hasSeats)?(parseInt(seatsEl.value,10)||1):1;
+  const need=Math.max(0,n-1);
+  const old=[...compBox.querySelectorAll('input')].map(i=>i.value);
+  compBox.innerHTML='';
     for(let i=0;i<need;i++){
       const w=document.createElement('div');w.className='fg';
       const l=document.createElement('label');l.htmlFor='rsvpComp'+(i+1);l.textContent='Acompañante '+(i+1)+' · nombre completo';
@@ -82,9 +82,47 @@
     }
     compBox.hidden=!need;
   }
+   
   const getComps=()=>compBox?[...compBox.querySelectorAll('input')].map(i=>i.value.trim().replace(/\s+/g,' ')):[];
    
-  let guest=null,authorized=Math.min(CFG.unlistedPasses||1,CFG.seatsCap||10),sending=false;
+  let guest=null,authorized=Math.min(CFG.unlistedPasses||1,CFG.seatsCap||10),sending=false;*/
+
+ /*prueba*/
+ let compBox=g('companions');
+if(!compBox){
+  compBox=document.createElement('div');
+  compBox.id='companions';
+  compBox.hidden=true;
+  (g('seatsBox')||(seatsEl&&seatsEl.parentNode)||form).appendChild(compBox);
+}
+let compErr=g('err-comp');
+if(!compErr){
+  compErr=document.createElement('p');
+  compErr.id='err-comp';
+  compErr.className='err';
+  compBox.insertAdjacentElement('afterend',compErr);
+}
+
+function renderCompanions(){
+  const n=(isYes(att())&&hasSeats)?(parseInt(seatsEl.value,10)||1):1;
+  const need=Math.max(0,n-1);
+  const old=[...compBox.querySelectorAll('input')].map(i=>i.value);
+  compBox.innerHTML='';
+  for(let i=0;i<need;i++){
+    const w=document.createElement('div');w.className='fg';
+    const l=document.createElement('label');l.htmlFor='rsvpComp'+(i+1);
+    l.textContent='Acompañante '+(i+1)+' · nombre completo';
+    const inp=document.createElement('input');
+    inp.type='text';inp.id='rsvpComp'+(i+1);inp.name='acompanante'+(i+1);
+    inp.maxLength=120;inp.autocomplete='off';
+    inp.placeholder='Nombre y apellidos';inp.value=old[i]||'';
+    inp.addEventListener('input',()=>setErr('comp',''));
+    w.append(l,inp);compBox.appendChild(w);
+  }
+  compBox.hidden=!need;
+}
+const getComps=()=>[...compBox.querySelectorAll('input')].map(i=>i.value.trim().replace(/\s+/g,' '));
+ /*fin*/
 
   const plural=(n,s,p)=>n+' '+(n===1?s:p);
   const val=n=>String((n&&n.value)||'').trim();
