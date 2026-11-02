@@ -782,3 +782,15 @@ body{background-color:var(--paper);background-image:url("data:image/svg+xml;utf8
 /*.icono-azul:hover {
   filter: none;
 }*/
+
+/* ===== Títulos en script: más pequeños y mejor repartidos ===== */
+h2{
+  font-size:clamp(36px,6vw,48px);   /* antes: 44px a 58px */
+  line-height:1.25;                 /* más aire para los trazos largos */
+  padding:.08em .05em .14em;        /* evita que se recorten las colas de la g, f, y */
+  margin-bottom:14px;
+  text-wrap:balance;                /* reparte las líneas de forma pareja */
+  max-width:16ch;                   /* evita líneas muy largas y una palabra suelta abajo */
+  margin-left:auto;
+  margin-right:auto;
+}
