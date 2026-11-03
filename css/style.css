@@ -1076,3 +1076,6 @@ section{padding:56px 24px}
   .flor { width: 100px; opacity: .85; }
   .flor.ftr, .flor.ftl { top: -60px; }
 }
+
+/* Flor de regalos */
+.flor.regalos { top: -40px; }.
