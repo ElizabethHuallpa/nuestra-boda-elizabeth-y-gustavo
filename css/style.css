@@ -1082,3 +1082,23 @@ section{padding:56px 24px}
 /* Flores un poco hacia adentro, sin quedar cortadas en el borde */
 .flor.ftr { right: clamp(12px, 5vw, 70px); top: -40px; }
 .flor.ftl { left:  clamp(12px, 5vw, 70px); top: -40px; }
+
+
+/* Al abrir: el cuerpo del sobre se desvanece y deja ver la invitación */
+@keyframes evFade { to { opacity: 0; visibility: hidden; } }
+@keyframes evBg   { to { background-color: transparent; } }
+
+#env.open,
+.open #env {
+  animation: evBg 1.2s ease 1.4s forwards;
+  pointer-events: none;                 /* los clics pasan a la invitación */
+}
+
+#env.open .ev-table,
+#env.open .ev-body,
+#env.open .ev-light,
+.open #env .ev-table,
+.open #env .ev-body,
+.open #env .ev-light {
+  animation: evFade 1.2s ease 1.4s forwards;
+}
