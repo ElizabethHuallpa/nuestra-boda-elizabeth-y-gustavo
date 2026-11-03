@@ -1096,11 +1096,6 @@ section{padding:56px 24px}
     evGone .6s ease .5s forwards !important;
 }
 
-/* Cuerpo, pliegues, fondo y luz se desvanecen justo después */
-{
-  animation: evGone .8s ease .6s forwards !important;
-}
-
 /* El fondo verde del sobre también se vuelve transparente */
 #env.open,
 .open #env {
