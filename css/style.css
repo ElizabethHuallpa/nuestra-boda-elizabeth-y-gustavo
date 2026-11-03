@@ -476,7 +476,7 @@ body{background-color:var(--paper);background-image:url("data:image/svg+xml;utf8
 }
 
 /* Forro decorado */
-#env .ev-liner {
+/*#env .ev-liner {
   position: absolute;
   inset: 0;
   clip-path: polygon(2.2% 100%, 97.8% 100%, 50% 8%);
@@ -489,7 +489,7 @@ body{background-color:var(--paper);background-image:url("data:image/svg+xml;utf8
     url("../assets/img/forro-sobre.png")
     center / cover no-repeat;
   overflow: hidden;
-}
+}*/
 
 /* Sello */
 #env .ev-seal {
@@ -574,17 +574,17 @@ body{background-color:var(--paper);background-image:url("data:image/svg+xml;utf8
 }
 
 /* fondo detrás del sobre */
-#env .ev-table{
+/*#env .ev-table{
   background:
     var(--grano),
     radial-gradient(ellipse at 50% 30%, rgba(120,138,92,.35), transparent 70%),
     linear-gradient(135deg,#4a5a37,#2f3b20);
-}
+}*/
 
 /* interior visible al abrir */
-#env .ev-inner{
+/*#env .ev-inner{
   background:var(--grano), linear-gradient(160deg,#3e4a2c,#2c3720);
-}
+}*/
 
 /* piezas del cuerpo: papel mate con luz suave desde arriba-izquierda */
 #env .ev-l{
