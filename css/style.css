@@ -985,19 +985,6 @@ section{padding:56px 24px}
 }
 @media (max-width:640px){#env .ev-hint{top:66%;font-size:9px;letter-spacing:2px}}
 
-/* Cuerpo: gradiente vertical suave, mismo tono en las tres piezas */
-#env .ev-l,
-#env .ev-r,
-#env .ev-b{
-  background-image:linear-gradient(180deg,#566339 0%,#46532f 50%,#363f27 100%);
-}
-
-/* Pliegue superior: hilo fino y oscuro suave */
-#env .ev-body::after{
-  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><path d='M0 87 L50 53 L100 87' fill='none' stroke='%23a9b47f' stroke-opacity='.45' stroke-width='1' vector-effect='non-scaling-stroke'/><path d='M0 20 L50 53 L100 20' fill='none' stroke='%231c2412' stroke-opacity='.4' stroke-width='1' vector-effect='non-scaling-stroke'/></svg>") center/100% 100% no-repeat;
-  opacity:1;
-}
-
 /* Sello más grande */
 #env .ev-seal{
   width:112px;height:112px;margin:-56px 0 0 -56px;
@@ -1083,7 +1070,6 @@ section{padding:56px 24px}
 .flor.ftr { right: clamp(12px, 5vw, 70px); top: -40px; }
 .flor.ftl { left:  clamp(12px, 5vw, 70px); top: -40px; }
 
-
 /* ===== Al abrir: desaparece todo el sobre y se ve la invitación ===== */
 @keyframes evGone { to { opacity: 0; visibility: hidden; } }
 @keyframes evBgOff { to { background: transparent; } }
@@ -1101,6 +1087,19 @@ section{padding:56px 24px}
 .open #env {
   animation: evBgOff .8s ease .6s forwards;
   pointer-events: none;
+}
+
+/* Cuerpo: gradiente vertical suave, mismo tono en las tres piezas */
+#env .ev-l,
+#env .ev-r,
+#env .ev-b{
+  background-image:linear-gradient(180deg,#566339 0%,#46532f 50%,#363f27 100%);
+}
+
+/* Pliegue superior: hilo fino y oscuro suave */
+#env .ev-body::after{
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><path d='M0 87 L50 53 L100 87' fill='none' stroke='%23a9b47f' stroke-opacity='.45' stroke-width='1' vector-effect='non-scaling-stroke'/><path d='M0 20 L50 53 L100 20' fill='none' stroke='%231c2412' stroke-opacity='.4' stroke-width='1' vector-effect='non-scaling-stroke'/></svg>") center/100% 100% no-repeat;
+  opacity:1;
 }
 
 /* Letras del titulo */
