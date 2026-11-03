@@ -1102,3 +1102,12 @@ section{padding:56px 24px}
   animation: evBgOff .8s ease .6s forwards;
   pointer-events: none;
 }
+
+/* Letras del titulo */
+h2,
+.ht .names {
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  color: #5b80a6;
+}
