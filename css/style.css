@@ -395,10 +395,10 @@ body{background-color:var(--paper);background-image:url("data:image/svg+xml;utf8
 }
 
 /* Pliegues laterales y solapa inferior */
-#env .ev-l {
+/*#env .ev-l {
   clip-path: polygon(0 0, 50% 44%, 0 100%);
   background: linear-gradient(110deg, #64764b, #465536);
-}
+}*/
 
 #env .ev-r {
   clip-path: polygon(100% 0, 50% 44%, 100% 100%);
@@ -1112,18 +1112,4 @@ h2,
   color: #5b80a6;
 }
 
-/* Monograma final: pequeño, sin óvalo */
-.mono,
-.rv.wc.b .mono {
-  width: clamp(84px, 22vw, 110px);
-  height: auto;
-  aspect-ratio: auto;
-  object-fit: contain;
-  border: 0;
-  border-radius: 0;
-  background: none;
-  box-shadow: none;
-  filter: none;
-  margin: 0 auto 4px;
-}
   .hop{animation:none}
