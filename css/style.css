@@ -985,3 +985,49 @@ section{padding:56px 24px}
   text-shadow:none;
 }
 @media (max-width:640px){#env .ev-hint{top:66%;font-size:9px;letter-spacing:2px}}
+
+/* ===== SOBRE: ajuste final (papel mate uniforme, como la referencia) ===== */
+
+/* Solapa casi del mismo tono que el cuerpo, un poco más clara arriba */
+#env .ev-front .ev-tri{
+  background:linear-gradient(180deg,#5d6a42 0%,#566339 60%,#4f5c36 100%);
+}
+
+/* Cuerpo: gradiente vertical suave, mismo tono en las tres piezas */
+#env .ev-l,
+#env .ev-r,
+#env .ev-b{
+  background-image:linear-gradient(180deg,#566339 0%,#46532f 50%,#363f27 100%);
+}
+
+/* Sombra de la solapa mucho más sutil */
+#env .ev-front{
+  filter:drop-shadow(0 1px 1px rgba(0,0,0,.22));
+}
+
+/* Pliegue superior: hilo fino y oscuro suave */
+#env .ev-body::after{
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><path d='M0 87 L50 53 L100 87' fill='none' stroke='%23a9b47f' stroke-opacity='.45' stroke-width='1' vector-effect='non-scaling-stroke'/><path d='M0 20 L50 53 L100 20' fill='none' stroke='%231c2412' stroke-opacity='.4' stroke-width='1' vector-effect='non-scaling-stroke'/></svg>") center/100% 100% no-repeat;
+  opacity:1;
+}
+
+/* Sello más grande */
+#env .ev-seal{
+  width:112px;height:112px;margin:-56px 0 0 -56px;
+  filter:drop-shadow(0 4px 4px rgba(0,0,0,.4));
+}
+@media (max-width:640px){
+  #env .ev-seal{width:100px;height:100px;margin:-50px 0 0 -50px}
+}
+
+/* Texto: más legible, entre los pliegues */
+#env .ev-hint{
+  top:calc(53% + 78px);
+  font-size:11px;
+  letter-spacing:2.6px;
+  color:rgba(222,216,178,.78);
+}
+@media (max-width:640px){
+  #env .ev-hint{top:calc(53% + 72px);font-size:10px;letter-spacing:2.2px}
+}
+
