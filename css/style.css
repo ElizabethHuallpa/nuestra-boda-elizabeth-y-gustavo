@@ -1079,3 +1079,6 @@ section{padding:56px 24px}
 
 /* Flor de regalos */
 .flor.regalos { top: -40px; }
+/* Flores un poco hacia adentro, sin quedar cortadas en el borde */
+.flor.ftr { right: clamp(12px, 5vw, 70px); top: -40px; }
+.flor.ftl { left:  clamp(12px, 5vw, 70px); top: -40px; }
