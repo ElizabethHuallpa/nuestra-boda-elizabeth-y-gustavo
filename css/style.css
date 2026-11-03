@@ -1059,3 +1059,20 @@ section{padding:56px 24px}
 /* NO NIÑOS */
 .cards.solo-adultos { display: flex; justify-content: center; }
 .cards.solo-adultos .card { width: 100%; max-width: 460px; }
+
+/* ===== Flores: detrás del contenido, en zigzag ===== */
+.cards, .print { position: relative; z-index: 1; }  /* tarjetas por encima de las flores */
+
+.flor { width: min(32vw, 160px); opacity: .9; }
+.flor.ftr { top: -80px; right: -20px; }              /* arriba derecha */
+.flor.ftl { top: -80px; left: -20px; }               /* arriba izquierda */
+.flor.fbl { display: none; }                          /* sin flores abajo */
+
+/* pequeñas variaciones para que no se vea copiado */
+.flor.ftr { transform: scaleX(-1) rotate(-6deg); }
+.flor.ftl { transform: rotate(6deg); }
+
+@media (max-width: 700px) {
+  .flor { width: 100px; opacity: .85; }
+  .flor.ftr, .flor.ftl { top: -60px; }
+}
