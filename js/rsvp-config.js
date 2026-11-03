@@ -33,7 +33,7 @@ const RSVP_CONFIG = {
     { n: "Petrona Percca Alania", p: 1 },
     { n: "Gladys Chayña", p: 1 },
     { n: "Ruben Huamani", p: 2 },
-    { n: "Yulieth Pere", p: 2 },
+    { n: "Yulieth Perez", p: 2 },
     { n: "Liseth Gamio", p: 2 },
     { n: "Dashiell del Carpio", p: 2 },
     { n: "Rosa Maria Condezo", p: 2 },
