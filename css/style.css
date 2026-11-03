@@ -1017,3 +1017,16 @@ section{padding:56px 24px}
 @media (max-width:640px){
   #env .ev-hint{top:calc(53% + 72px);font-size:10px;letter-spacing:2.2px}
 }
+
+/* PAdrinos */
+.cards.padrinos {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px; /* ajústalo al mismo espacio que hay entre las dos tarjetas */
+}
+.cards.padrinos .card {
+  width: calc(50% - 12px); /* mismo ancho que una tarjeta de arriba */
+}
+@media (max-width: 700px) {
+  .cards.padrinos .card { width: 100%; }
+}
