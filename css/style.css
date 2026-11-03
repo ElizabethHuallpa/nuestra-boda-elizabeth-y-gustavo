@@ -881,3 +881,14 @@ section{padding:56px 24px}
 .sub{font-size:18px;line-height:1.65}
 
 #env .ev-seal img{width:100%;height:100%;display:block;-webkit-user-drag:none;user-select:none}
+
+/* SOBRE: acabado mate y sin sombra exterior */
+
+#env .ev-body {
+    filter: none !important;
+    box-shadow: none !important;
+}
+
+#env .ev-cast {
+    display: none !important;
+}
