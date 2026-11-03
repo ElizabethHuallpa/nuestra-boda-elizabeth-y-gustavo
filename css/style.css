@@ -1112,3 +1112,29 @@ h2,
 }
 
   .hop{animation:none}
+
+/* ===== Al abrir: el sobre se desvanece y queda solo la invitación ===== */
+#env.open .ev-flap,
+body.open #env .ev-flap { animation-duration: 1.8s; }
+
+#env.open,
+body.open #env {
+  animation: envSalir .9s ease 1.1s forwards;
+  pointer-events: none;
+}
+@keyframes envSalir { to { opacity: 0; visibility: hidden; } }
+
+/* la invitación aparece mientras el sobre se abre */
+#env.open ~ main,
+body.open main {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 1s ease .8s;
+}
+
+/* permitir scroll en cuanto se abre */
+body:has(#env.open),
+body.open { overflow: auto; height: auto; }
+
+/* sin cuadro de color al tocar el sello */
+#env .ev-seal { -webkit-tap-highlight-color: transparent; outline: none; }
