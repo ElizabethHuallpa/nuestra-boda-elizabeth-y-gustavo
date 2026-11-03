@@ -1030,3 +1030,28 @@ section{padding:56px 24px}
 @media (max-width: 700px) {
   .cards.padrinos .card { width: 100%; }
 }
+
+/* BBVA */
+.cards.bank { display: flex; justify-content: center; }
+.cards.bank .card { width: 100%; max-width: 460px; } /* ajusta al ancho de tus otras tarjetas */
+
+.copy-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 16px;
+}
+.copy-btn {
+  font: inherit;
+  font-size: .95rem;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid #384d62;   /* Soft Navy */
+  background: transparent;
+  color: #384d62;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.copy-btn:hover { background: #384d62; color: #FAFAFA; }
+.copy-btn.ok { background: #7A8F63; border-color: #7A8F63; color: #FAFAFA; } /* Verde Oliva */
