@@ -882,15 +882,54 @@ section{padding:56px 24px}
 
 #env .ev-seal img{width:100%;height:100%;display:block;-webkit-user-drag:none;user-select:none}
 
-/* PLIEGUES DEL SOBRE: relieve fino */
-
-#env .ev-seams {
-    overflow: visible;
+/* ===== SOBRE: igual que la referencia (solapa pentagonal, sello al 53 %) ===== */
+#env{
+  --v-lado:20%;   /* altura donde empieza la V en los bordes */
+  --v-punta:53%;  /* altura de la punta de la V (sello) */
+  --v-baja:87%;   /* donde terminan los pliegues inferiores */
 }
 
-#env .ev-seams path {
-    stroke-width: 2.25px !important;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    filter: drop-shadow(0 1px 1px rgba(0,0,0,.12));
+/* Piezas del cuerpo */
+#env .ev-l{clip-path:polygon(0 20%,50% 53%,0 87%)}
+#env .ev-r{clip-path:polygon(100% 20%,50% 53%,100% 87%)}
+#env .ev-b{clip-path:polygon(0 87%,50% 53%,100% 87%,100% 100%,0 100%)}
+
+/* Solapa: pentágono (rectángulo arriba + V) */
+#env .ev-flap{height:53%}
+#env .ev-front .ev-tri{
+  clip-path:polygon(0 0,100% 0,100% 37.7%,50% 100%,0 37.7%);
+  background:
+    var(--grano), var(--fibras),
+    linear-gradient(180deg,rgba(255,255,255,.08),rgba(0,0,0,.12)),
+    #6a7049;
 }
+#env .ev-backf .ev-tri{
+  clip-path:polygon(0 100%,100% 100%,100% 62.3%,50% 0,0 62.3%);
+}
+#env .ev-liner{
+  clip-path:polygon(2.2% 100%,97.8% 100%,97.8% 62.3%,50% 8%,2.2% 62.3%);
+}
+
+/* Relieve del borde de la solapa (sombra fina bajo la V) */
+#env .ev-front{
+  filter:drop-shadow(0 2px 1.5px rgba(0,0,0,.38)) drop-shadow(0 -1px 0 rgba(255,255,220,.10));
+}
+
+/* Quita las líneas SVG antiguas y la sombra triangular */
+#env .ev-seams{display:none}
+#env .ev-cast{display:none}
+
+/* Pliegues inferiores finos, como en la foto */
+#env .ev-body::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:3;
+  pointer-events:none;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><path d='M0 87 L50 53 L100 87' fill='none' stroke='%23b9c48f' stroke-opacity='.35' stroke-width='1.2' vector-effect='non-scaling-stroke'/><path d='M0 20 L50 53 L100 20' fill='none' stroke='%231c2412' stroke-opacity='.35' stroke-width='1.2' vector-effect='non-scaling-stroke'/></svg>") center/100% 100% no-repeat;
+}
+
+/* Sello y texto en la nueva punta */
+#env .ev-seal{top:100%}
+#env .ev-hint{top:calc(53% + 80px)}
+@media (max-width:640px){#env .ev-hint{top:calc(53% + 66px)}}
