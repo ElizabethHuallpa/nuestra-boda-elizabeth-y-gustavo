@@ -1097,18 +1097,7 @@ section{padding:56px 24px}
 }
 
 /* Cuerpo, pliegues, fondo y luz se desvanecen justo después */
-#env.open .ev-body,
-#env.open .ev-table,
-#env.open .ev-inner,
-#env.open .ev-light,
-#env.open .ev-seal,
-#env.open .ev-hint,
-.open #env .ev-body,
-.open #env .ev-table,
-.open #env .ev-inner,
-.open #env .ev-light,
-.open #env .ev-seal,
-.open #env .ev-hint {
+{
   animation: evGone .8s ease .6s forwards !important;
 }
 
