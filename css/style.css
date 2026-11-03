@@ -1055,3 +1055,7 @@ section{padding:56px 24px}
 }
 .copy-btn:hover { background: #384d62; color: #FAFAFA; }
 .copy-btn.ok { background: #7A8F63; border-color: #7A8F63; color: #FAFAFA; } /* Verde Oliva */
+
+/* NO NIÑOS */
+.cards.solo-adultos { display: flex; justify-content: center; }
+.cards.solo-adultos .card { width: 100%; max-width: 460px; }
