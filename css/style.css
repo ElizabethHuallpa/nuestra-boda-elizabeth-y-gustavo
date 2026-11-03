@@ -1139,60 +1139,56 @@ body.open { overflow: auto; height: auto; }
 /* sin cuadro de color al tocar el sello */
 #env .ev-seal { -webkit-tap-highlight-color: transparent; outline: none; }
 
-/* ===== SOBRE: PAPEL MATE REALISTA (referencia) ===== */
+/* ===== SOBRE: PAPEL MATE LISO (v2) ===== */
 #env{
-  --g-fino:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='a'><feTurbulence stitchTiles='stitch' type='fractalNoise' baseFrequency='.95' numOctaves='3' seed='3'/><feColorMatrix values='0 0 0 0 .03 0 0 0 0 .05 0 0 0 0 .01 0 0 0 .7 -.22'/></filter><rect width='240' height='240' filter='url(%23a)'/></svg>");
-  --g-luz:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='b'><feTurbulence stitchTiles='stitch' type='fractalNoise' baseFrequency='.8' numOctaves='2' seed='9'/><feColorMatrix values='0 0 0 0 .95 0 0 0 0 .96 0 0 0 0 .78 0 0 0 .45 -.2'/></filter><rect width='240' height='240' filter='url(%23b)'/></svg>");
-  --nube:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='700' height='700'><filter id='c'><feTurbulence stitchTiles='stitch' type='fractalNoise' baseFrequency='.004 .007' numOctaves='3' seed='14'/><feColorMatrix values='0 0 0 0 .92 0 0 0 0 .95 0 0 0 0 .72 0 0 0 .55 -.2'/></filter><rect width='700' height='700' filter='url(%23c)'/></svg>");
-  background:#46512f;
+  --grano:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='a' x='0' y='0' width='100%' height='100%'><feTurbulence stitchTiles='stitch' type='fractalNoise' baseFrequency='.8' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .22 0'/></filter><rect width='200' height='200' filter='url(%23a)'/></svg>");
+  background:#44502f;
 }
 
-/* fondo y cuerpo: mismo papel, luz de arriba a abajo */
-#env .ev-table{background:var(--g-fino),linear-gradient(180deg,#5a6340,#3a4528)}
-#env .ev-inner{background:var(--g-fino),linear-gradient(160deg,#3e4a2c,#2c3720)}
+/* fondo y cuerpo: un solo tono, luz suave de arriba hacia abajo */
+#env .ev-table{background:linear-gradient(180deg,#556140,#3b4629)}
+#env .ev-inner{background:linear-gradient(180deg,#2f3a21,#262f1b)}
 
-#env .ev-l,
-#env .ev-r,
-#env .ev-b{
-  background-color:#4f5a37;
-  background-image:var(--g-fino),var(--g-luz),var(--nube),
-    linear-gradient(180deg,rgba(255,255,230,.10),rgba(0,0,0,.22));
+#env .ev-l,#env .ev-r,#env .ev-b{
+  background-color:#4d5a36;
+  background-size:200px 200px,auto;
+  background-repeat:repeat,no-repeat;
 }
-#env .ev-l{background-image:var(--g-fino),var(--g-luz),var(--nube),linear-gradient(100deg,rgba(255,255,230,.06),rgba(0,0,0,.20))}
-#env .ev-r{background-image:var(--g-fino),var(--g-luz),var(--nube),linear-gradient(260deg,rgba(255,255,230,.02),rgba(0,0,0,.26))}
+#env .ev-l{background-image:var(--grano),linear-gradient(100deg,rgba(255,255,225,.05),rgba(0,0,0,.18))}
+#env .ev-r{background-image:var(--grano),linear-gradient(260deg,rgba(255,255,225,.03),rgba(0,0,0,.22))}
+#env .ev-b{background-image:var(--grano),linear-gradient(0deg,rgba(0,0,0,.16),rgba(255,255,225,.04))}
 
-/* solapa: casi el mismo tono que el cuerpo, solo un poco más iluminada */
+/* solapa: casi el mismo tono, apenas más iluminada */
 #env .ev-front .ev-tri{
-  background-color:#5b6340;
-  background-image:var(--g-fino),var(--g-luz),var(--nube),
-    linear-gradient(180deg,rgba(255,255,230,.10),rgba(0,0,0,.12));
+  background-color:#56633d;
+  background-size:200px 200px,auto;
+  background-repeat:repeat,no-repeat;
+  background-image:var(--grano),linear-gradient(180deg,rgba(255,255,225,.08),rgba(0,0,0,.10));
 }
 
-/* pliegues: hendidura fina (línea oscura + brillo al lado) */
-#env .ev-seams path:first-child{stroke:#1b2210;stroke-opacity:.5;stroke-width:1px}
-#env .ev-seams path:last-child{stroke:#cfd8a8;stroke-opacity:.22;stroke-width:1px}
+/* pliegues: hendidura fina */
+#env .ev-seams path:first-child{stroke:#1b2210;stroke-opacity:.45;stroke-width:1px}
+#env .ev-seams path:last-child{stroke:#cfd8a8;stroke-opacity:.18;stroke-width:1px}
 
-/* sombra de la solapa, suave y pegada */
+/* sombras suaves y pegadas */
 #env .ev-body{filter:drop-shadow(0 1px 3px rgba(0,0,0,.25))}
-#env .ev-cast{top:2px;background:rgba(12,17,6,.38);filter:blur(4px)}
+#env .ev-cast{top:2px;background:rgba(12,17,6,.34);filter:blur(4px)}
 
-/* luz general + viñeta */
+/* luz general + viñeta suave (sin texturas repetidas) */
 #env .ev-light{
   background:
-    radial-gradient(130% 60% at 25% 0%,rgba(255,255,225,.14),transparent 60%),
-    radial-gradient(140% 100% at 50% 45%,transparent 55%,rgba(0,0,0,.34) 100%);
+    radial-gradient(120% 55% at 30% 0%,rgba(255,255,225,.10),transparent 60%),
+    radial-gradient(140% 100% at 50% 45%,transparent 60%,rgba(0,0,0,.28) 100%);
 }
 
-/* sello más grande y más mate */
+/* sello */
 #env .ev-seal{width:140px;height:140px;margin:-70px 0 0 -70px;
-  filter:drop-shadow(0 8px 6px rgba(0,0,0,.45)) drop-shadow(0 1px 0 rgba(255,240,190,.2))}
-#env .ev-seal svg{filter:saturate(.85) brightness(.96)}
+  filter:drop-shadow(0 8px 6px rgba(0,0,0,.45))}
 @media (max-width:640px){#env .ev-seal{width:124px;height:124px;margin:-62px 0 0 -62px}}
 
-/* texto: más pequeño y dentro del "V" para no tocar los pliegues */
+/* texto: debajo del sello, fuera de las líneas de los pliegues */
 #env .ev-hint{
-  top:calc(44% + 78px);
+  top:calc(44% + 20vh);
   font-size:11px;letter-spacing:2.5px;
-  color:rgba(214,198,140,.78);
+  color:rgba(214,198,140,.8);
 }
-@media (max-width:640px){#env .ev-hint{top:calc(44% + 70px)}}
