@@ -1138,3 +1138,61 @@ body.open { overflow: auto; height: auto; }
 
 /* sin cuadro de color al tocar el sello */
 #env .ev-seal { -webkit-tap-highlight-color: transparent; outline: none; }
+
+/* ===== SOBRE: PAPEL MATE REALISTA (referencia) ===== */
+#env{
+  --g-fino:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='a'><feTurbulence stitchTiles='stitch' type='fractalNoise' baseFrequency='.95' numOctaves='3' seed='3'/><feColorMatrix values='0 0 0 0 .03 0 0 0 0 .05 0 0 0 0 .01 0 0 0 .7 -.22'/></filter><rect width='240' height='240' filter='url(%23a)'/></svg>");
+  --g-luz:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='b'><feTurbulence stitchTiles='stitch' type='fractalNoise' baseFrequency='.8' numOctaves='2' seed='9'/><feColorMatrix values='0 0 0 0 .95 0 0 0 0 .96 0 0 0 0 .78 0 0 0 .45 -.2'/></filter><rect width='240' height='240' filter='url(%23b)'/></svg>");
+  --nube:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='700' height='700'><filter id='c'><feTurbulence stitchTiles='stitch' type='fractalNoise' baseFrequency='.004 .007' numOctaves='3' seed='14'/><feColorMatrix values='0 0 0 0 .92 0 0 0 0 .95 0 0 0 0 .72 0 0 0 .55 -.2'/></filter><rect width='700' height='700' filter='url(%23c)'/></svg>");
+  background:#46512f;
+}
+
+/* fondo y cuerpo: mismo papel, luz de arriba a abajo */
+#env .ev-table{background:var(--g-fino),linear-gradient(180deg,#5a6340,#3a4528)}
+#env .ev-inner{background:var(--g-fino),linear-gradient(160deg,#3e4a2c,#2c3720)}
+
+#env .ev-l,
+#env .ev-r,
+#env .ev-b{
+  background-color:#4f5a37;
+  background-image:var(--g-fino),var(--g-luz),var(--nube),
+    linear-gradient(180deg,rgba(255,255,230,.10),rgba(0,0,0,.22));
+}
+#env .ev-l{background-image:var(--g-fino),var(--g-luz),var(--nube),linear-gradient(100deg,rgba(255,255,230,.06),rgba(0,0,0,.20))}
+#env .ev-r{background-image:var(--g-fino),var(--g-luz),var(--nube),linear-gradient(260deg,rgba(255,255,230,.02),rgba(0,0,0,.26))}
+
+/* solapa: casi el mismo tono que el cuerpo, solo un poco más iluminada */
+#env .ev-front .ev-tri{
+  background-color:#5b6340;
+  background-image:var(--g-fino),var(--g-luz),var(--nube),
+    linear-gradient(180deg,rgba(255,255,230,.10),rgba(0,0,0,.12));
+}
+
+/* pliegues: hendidura fina (línea oscura + brillo al lado) */
+#env .ev-seams path:first-child{stroke:#1b2210;stroke-opacity:.5;stroke-width:1px}
+#env .ev-seams path:last-child{stroke:#cfd8a8;stroke-opacity:.22;stroke-width:1px}
+
+/* sombra de la solapa, suave y pegada */
+#env .ev-body{filter:drop-shadow(0 1px 3px rgba(0,0,0,.25))}
+#env .ev-cast{top:2px;background:rgba(12,17,6,.38);filter:blur(4px)}
+
+/* luz general + viñeta */
+#env .ev-light{
+  background:
+    radial-gradient(130% 60% at 25% 0%,rgba(255,255,225,.14),transparent 60%),
+    radial-gradient(140% 100% at 50% 45%,transparent 55%,rgba(0,0,0,.34) 100%);
+}
+
+/* sello más grande y más mate */
+#env .ev-seal{width:140px;height:140px;margin:-70px 0 0 -70px;
+  filter:drop-shadow(0 8px 6px rgba(0,0,0,.45)) drop-shadow(0 1px 0 rgba(255,240,190,.2))}
+#env .ev-seal svg{filter:saturate(.85) brightness(.96)}
+@media (max-width:640px){#env .ev-seal{width:124px;height:124px;margin:-62px 0 0 -62px}}
+
+/* texto: más pequeño y dentro del "V" para no tocar los pliegues */
+#env .ev-hint{
+  top:calc(44% + 78px);
+  font-size:11px;letter-spacing:2.5px;
+  color:rgba(214,198,140,.78);
+}
+@media (max-width:640px){#env .ev-hint{top:calc(44% + 70px)}}
