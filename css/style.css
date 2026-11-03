@@ -933,3 +933,55 @@ section{padding:56px 24px}
 #env .ev-seal{top:100%}
 #env .ev-hint{top:calc(53% + 80px)}
 @media (max-width:640px){#env .ev-hint{top:calc(53% + 66px)}}
+
+/* ===== SOBRE: papel mate liso, oliva oscuro (como la referencia) ===== */
+#env{background:#3a4529}
+
+/* Cuerpo: mismo degradado vertical en las tres piezas, sin manchas */
+#env .ev-l,
+#env .ev-r,
+#env .ev-b{
+  background:linear-gradient(180deg,#5f6c44 0%,#4a5732 55%,#394429 100%);
+}
+#env .ev-l{background-image:linear-gradient(180deg,#5d6a42 0%,#485530 55%,#38432a 100%)}
+#env .ev-r{background-image:linear-gradient(180deg,#5a673f 0%,#46532f 55%,#364027 100%)}
+
+/* Solapa: un poco más clara arriba, igual que la foto */
+#env .ev-front .ev-tri{
+  background:linear-gradient(180deg,#787c55 0%,#656f49 60%,#5a6641 100%);
+}
+
+/* Fondo e interior sin grano */
+#env .ev-table,
+#env .ev-inner{background:linear-gradient(180deg,#4a5733,#2f3a21)}
+
+/* Luz y viñeta casi imperceptibles */
+#env .ev-light{
+  background:
+    radial-gradient(120% 60% at 50% 0%,rgba(255,255,220,.07),transparent 60%),
+    radial-gradient(130% 95% at 50% 50%,transparent 65%,rgba(0,0,0,.18) 100%);
+}
+
+/* Pliegues finos y suaves */
+#env .ev-body::after{opacity:.85}
+
+/* Sello más pequeño y mate */
+#env .ev-seal{
+  width:84px;height:84px;margin:-42px 0 0 -42px;
+  filter:drop-shadow(0 3px 3px rgba(0,0,0,.35));
+}
+@media (max-width:640px){
+  #env .ev-seal{width:68px;height:68px;margin:-34px 0 0 -34px}
+}
+
+/* Texto pequeño, fino y discreto */
+#env .ev-hint{
+  top:66%;
+  font-family:'Cormorant Garamond',serif;
+  font-weight:600;
+  font-size:10px;
+  letter-spacing:2.2px;
+  color:rgba(205,200,160,.62);
+  text-shadow:none;
+}
+@media (max-width:640px){#env .ev-hint{top:66%;font-size:9px;letter-spacing:2px}}
