@@ -882,13 +882,15 @@ section{padding:56px 24px}
 
 #env .ev-seal img{width:100%;height:100%;display:block;-webkit-user-drag:none;user-select:none}
 
-/* SOBRE: acabado mate y sin sombra exterior */
+/* PLIEGUES DEL SOBRE: relieve fino */
 
-#env .ev-body {
-    filter: none !important;
-    box-shadow: none !important;
+#env .ev-seams {
+    overflow: visible;
 }
 
-#env .ev-cast {
-    display: none !important;
+#env .ev-seams path {
+    stroke-width: 1.25px !important;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,.12));
 }
