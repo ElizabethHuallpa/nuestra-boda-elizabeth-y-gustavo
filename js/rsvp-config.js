@@ -39,7 +39,7 @@ const RSVP_CONFIG = {
     { n: "Rosa Maria Condezo", p: 2 },
     { n: "Hivet Mamani", p: 2 },
     { n: "Luis Romero", p: 2 },
-    { n: "Dann Arias Berrocal", p: 1 },
+    { n: "Dann Arias Berrocal", p: 2 },
     { n: "Stefany Yarasca", p: 1 },
     { n: "Guisell Caballero", p: 2 },
     { n: "Eric Peña", p: 2 },
