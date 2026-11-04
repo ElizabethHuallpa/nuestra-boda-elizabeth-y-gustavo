@@ -53,7 +53,8 @@ const RSVP_CONFIG = {
     { n: "Andre Apaza", p: 2 },
     { n: "Reymundo Hualpa", p: 2 },
     { n: "Leonarda Mulluni", p: 2 },
-    { n: "Yossy Quintanilla", p: 2 }
+    { n: "Yossy Quintanilla", p: 2 },
+    { n: "Anali keyla Felix Antezana", p: 1 }
   ],
 
   // Invitaciones no registradas: un pase por defecto
