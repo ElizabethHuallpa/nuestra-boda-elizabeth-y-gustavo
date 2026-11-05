@@ -11,7 +11,7 @@ const RSVP_CONFIG = {
     { n: "Claudia Jimenez", p: 2 },
     { n: "Akira Yamashiro", p: 2 },
     { n: "Victoria Anticon", p: 1 },
-    { n: "Rafael Chipana", p: 2 },
+    { n: "Raphael Chipana", p: 2 },
     { n: "Jonathan Medina", p: 2 },
     { n: "Sonia Arellano", p: 2 },
     { n: "Clotilde Avalo", p: 2 },
