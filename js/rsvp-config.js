@@ -4,7 +4,7 @@ const RSVP_CONFIG = {
     { n: "Gustavo Antonio", p: 3 },
     { n: "Orfelinda Avalo", p: 1 },
     { n: "Carla Arellano", p: 2 },
-    { n: "Fabian Sotelo", p: 2 },
+    { n: "Fabian Sotelo", p: 1 },
     { n: "Jairo Lindo", p: 2 },
     { n: "Luis Ponte", p: 2 },
     { n: "Miguel Carhuatocto", p: 2 },
