@@ -57,6 +57,7 @@ const RSVP_CONFIG = {
     { n: "Anali keyla Felix Antezana", p: 1 },
  { n: "José Lara", p: 1 }
   ],
+{ n: "Nataly Jhoselyna", p: 2 },
 
   // Invitaciones no registradas: un pase por defecto
   unlistedPasses: 1,
