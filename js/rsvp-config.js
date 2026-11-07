@@ -55,10 +55,9 @@ const RSVP_CONFIG = {
     { n: "Leonarda Mulluni", p: 2 },
     { n: "Yossy Quintanilla", p: 2 },
     { n: "Anali keyla Felix Antezana", p: 1 },
- { n: "José Lara", p: 1 }
+    { n: "Nataly Jhoselyna", p: 2 },
+    { n: "José Lara", p: 1 }
   ],
-{ n: "Nataly Jhoselyna", p: 2 },
-
   // Invitaciones no registradas: un pase por defecto
   unlistedPasses: 1,
   // Máximo general de personas, incluida la persona titular
